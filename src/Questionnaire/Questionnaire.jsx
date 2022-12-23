@@ -3,7 +3,7 @@ import QuestionForm from "./QuestionForm";
 import { useState } from "react";
 
 function Questionnaire() {
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState(0);
   const [userData, setUserData] = useState({
     goal: "",
     age: "",

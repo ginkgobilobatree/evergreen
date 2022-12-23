@@ -20,6 +20,29 @@ form
         font-weight: 300
         font-size: 2rem
 
+    input[type="radio"]
+        opacity: 0
+        position: fixed
+        width: 0
+
+    label
+        display: inline-block
+        background: rgb(74, 160, 128)
+        padding: 10px 20px
+        font-family: sans-serif, Arial
+        font-size: 16px
+        border-radius: 4px
+
+    input[type="radio"]:hover + label 
+        background: rgb(188, 219, 208)
+        border-color: #4c4
+
+    input[type="radio"]:active + label
+        background: black
+
+
+
+
 .answers
     color: rgb(129, 188, 166)
     background: white
