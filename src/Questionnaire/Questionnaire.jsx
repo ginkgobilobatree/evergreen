@@ -14,7 +14,7 @@ function Questionnaire() {
 
   return (
     <>
-      <QuestionForm setUserData={setUserData} setStep={setStep} step={step} />
+      <QuestionForm setUserData={setUserData} userData={userData} setStep={setStep} step={step} />
       <QuestionAnswers userData={userData} step={step} />
     </>
   );
