@@ -7,7 +7,7 @@ function QuestionForm({ setUserData, step, setStep, userData }) {
   if (step === 4) {
     return (
       <form>
-        <h1>Ich möchte mein Vermögen...</h1>
+        <h1>Hier die Fragen</h1>
         <p className="question">{Questions[step]}</p>
         <div>
           <input
@@ -139,10 +139,7 @@ function QuestionForm({ setUserData, step, setStep, userData }) {
           />
           <label htmlFor="ten">10</label>
         </div>
-        <button
-          type="button"
-          onClick={() => setStep(step - 1)}
-        >
+        <button type="button" onClick={() => setStep(step - 1)}>
           Zurück
         </button>
       </form>
@@ -151,7 +148,7 @@ function QuestionForm({ setUserData, step, setStep, userData }) {
 
   return (
     <form>
-      <h1>Ich möchte mein Vermögen...</h1>
+      <h1>Hier die Fragen</h1>
       <p className="question">{Questions[step]}</p>
       <div>
         <input
@@ -163,7 +160,10 @@ function QuestionForm({ setUserData, step, setStep, userData }) {
           type="radio"
           id="input1"
           name={Object.keys(Answers[step])}
-          value={Object.values(Answers[step])[0][0][1]}
+          value={[
+            Object.values(Answers[step])[0][0][1],
+            Object.values(Answers[step])[0][0][0],
+          ]}
         />
         <label htmlFor="input1">{Object.values(Answers[step])[0][0][0]}</label>
       </div>
@@ -177,7 +177,10 @@ function QuestionForm({ setUserData, step, setStep, userData }) {
           type="radio"
           id="input2"
           name={Object.keys(Answers[step])}
-          value={Object.values(Answers[step])[0][1][1]}
+          value={[
+            Object.values(Answers[step])[0][1][1],
+            Object.values(Answers[step])[0][1][0],
+          ]}
         />
         <label htmlFor="input2">{Object.values(Answers[step])[0][1][0]}</label>
       </div>
@@ -191,7 +194,10 @@ function QuestionForm({ setUserData, step, setStep, userData }) {
           type="radio"
           id="input3"
           name={Object.keys(Answers[step])}
-          value={Object.values(Answers[step])[0][2][1]}
+          value={[
+            Object.values(Answers[step])[0][2][1],
+            Object.values(Answers[step])[0][2][0],
+          ]}
         />
         <label htmlFor="input3">{Object.values(Answers[step])[0][2][0]}</label>
       </div>

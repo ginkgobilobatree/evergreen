@@ -7,14 +7,19 @@ function Questionnaire() {
   const [userData, setUserData] = useState({
     goal: "",
     age: "",
-    selfTest: "",
     duration: "",
     behaviour: "",
+    selfTest: "",
   });
 
   return (
     <>
-      <QuestionForm setUserData={setUserData} userData={userData} setStep={setStep} step={step} />
+      <QuestionForm
+        setUserData={setUserData}
+        userData={userData}
+        setStep={setStep}
+        step={step}
+      />
       <QuestionAnswers userData={userData} step={step} />
     </>
   );
