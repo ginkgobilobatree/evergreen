@@ -1,11 +1,20 @@
-export async function postUserData(setResult) {
-  const url =
-    "http://localhost:8000/getData";
+export async function postUserData(userData, setResult) {
+  const url = "http://localhost:8000/getData";
+  const data = {
+    goal: userData.goal.split(",")[0],
+    age: userData.age.split(",")[0],
+    duration: userData.duration.split(",")[0],
+    behaviour: userData.behaviour.split(",")[0],
+    selfTest: Number(userData.selfTest),
+  };
   const response = await fetch(url, {
-    method: "GET",
+    method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
+    body: JSON.stringify(data),
   });
-  console.log(await response.json())
+  const result = await response.json();
+  setResult(result);
+  return result;
 }
