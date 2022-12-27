@@ -1,14 +1,16 @@
 import React from "react";
 import "../App.sass";
-import { Questions, Answers } from "../data/text";
+import { Questions, Answers, GeneralText } from "../data/text";
 import { handleChange } from "../utils/handleChange";
 
 function QuestionForm({ setUserData, step, setStep, userData }) {
   if (step === 4) {
     return (
       <form>
-        <h1>Hier die Fragen</h1>
-        <p className="question">{Questions[step]}</p>
+        <h1>{GeneralText.hereQuestions}</h1>
+        <div className="questionContainer">
+          <p className="question">{Questions[step]}</p>
+        </div>
         <div>
           <input
             onClick={(e) => {
@@ -139,8 +141,8 @@ function QuestionForm({ setUserData, step, setStep, userData }) {
           />
           <label htmlFor="ten">10</label>
         </div>
-        <button type="button" onClick={() => setStep(step - 1)}>
-          Zurück
+        <button className="goBack" type="button" onClick={() => setStep(step - 1)}>
+          {GeneralText.goBackButton}
         </button>
       </form>
     );
@@ -148,65 +150,76 @@ function QuestionForm({ setUserData, step, setStep, userData }) {
 
   return (
     <form>
-      <h1>Hier die Fragen</h1>
-      <p className="question">{Questions[step]}</p>
-      <div>
-        <input
-          onClick={(e) => {
-            e.preventDefault();
-            handleChange(e, setUserData, userData);
-            setStep(step + 1);
-          }}
-          type="radio"
-          id="input1"
-          name={Object.keys(Answers[step])}
-          value={[
-            Object.values(Answers[step])[0][0][1],
-            Object.values(Answers[step])[0][0][0],
-          ]}
-        />
-        <label htmlFor="input1">{Object.values(Answers[step])[0][0][0]}</label>
+      <h1>{GeneralText.hereQuestions}</h1>
+      <div className="questionContainer">
+        <p className="question">{Questions[step]}</p>
       </div>
-      <div>
-        <input
-          onClick={(e) => {
-            e.preventDefault();
-            handleChange(e, setUserData, userData);
-            setStep(step + 1);
-          }}
-          type="radio"
-          id="input2"
-          name={Object.keys(Answers[step])}
-          value={[
-            Object.values(Answers[step])[0][1][1],
-            Object.values(Answers[step])[0][1][0],
-          ]}
-        />
-        <label htmlFor="input2">{Object.values(Answers[step])[0][1][0]}</label>
-      </div>
-      <div>
-        <input
-          onClick={(e) => {
-            e.preventDefault();
-            handleChange(e, setUserData, userData);
-            setStep(step + 1);
-          }}
-          type="radio"
-          id="input3"
-          name={Object.keys(Answers[step])}
-          value={[
-            Object.values(Answers[step])[0][2][1],
-            Object.values(Answers[step])[0][2][0],
-          ]}
-        />
-        <label htmlFor="input3">{Object.values(Answers[step])[0][2][0]}</label>
+      <div className="input3Container">
+        <div>
+          <input
+            onClick={(e) => {
+              e.preventDefault();
+              handleChange(e, setUserData, userData);
+              setStep(step + 1);
+            }}
+            type="radio"
+            id="input1"
+            name={Object.keys(Answers[step])}
+            value={[
+              Object.values(Answers[step])[0][0][1],
+              Object.values(Answers[step])[0][0][0],
+            ]}
+          />
+          <label htmlFor="input1">
+            {Object.values(Answers[step])[0][0][0]}
+          </label>
+        </div>
+        <div>
+          <input
+            onClick={(e) => {
+              e.preventDefault();
+              handleChange(e, setUserData, userData);
+              setStep(step + 1);
+            }}
+            type="radio"
+            id="input2"
+            name={Object.keys(Answers[step])}
+            value={[
+              Object.values(Answers[step])[0][1][1],
+              Object.values(Answers[step])[0][1][0],
+            ]}
+          />
+          <label htmlFor="input2">
+            {Object.values(Answers[step])[0][1][0]}
+          </label>
+        </div>
+        <div>
+          <input
+            onClick={(e) => {
+              e.preventDefault();
+              handleChange(e, setUserData, userData);
+              setStep(step + 1);
+            }}
+            type="radio"
+            id="input3"
+            name={Object.keys(Answers[step])}
+            value={[
+              Object.values(Answers[step])[0][2][1],
+              Object.values(Answers[step])[0][2][0],
+            ]}
+          />
+          <label htmlFor="input3">
+            {Object.values(Answers[step])[0][2][0]}
+          </label>
+        </div>
       </div>
       <button
+        className="goBack"
         type="button"
         disabled={step === 0}
         onClick={() => setStep(step - 1)}
       >
-        Zurück
+        {GeneralText.goBackButton}
       </button>
     </form>
   );

@@ -10,15 +10,26 @@
     margin-bottom: min(5rem)
 
 form
+    padding: 2rem 3rem 0
     color: white
     background: rgb(67, 56, 113)
     height: 100%
     width: 65%
 
+    .questionContainer
+        height: 4rem
+
     .question
         font-family: playfair
         font-weight: 300
         font-size: 2rem
+        margin-top: 3rem
+        text-align: center
+
+    .input3Container
+        display: flex
+        justify-content: space-around
+        margin-top: 5rem
 
     input[type="radio"]
         opacity: 0
@@ -26,25 +37,41 @@ form
         width: 0
 
     label
-        display: inline-block
+        width: 9rem
+        display: block
         background: rgb(74, 160, 128)
-        padding: 10px 20px
-        font-family: sans-serif, Arial
-        font-size: 16px
+        padding: .75rem 1.5rem
         border-radius: 4px
+        text-align: center
 
     input[type="radio"]:hover + label 
         background: rgb(188, 219, 208)
-        border-color: #4c4
 
     input[type="radio"]:active + label
         background: white
 
-
-
-
 .answers
-    color: rgb(129, 188, 166)
+    padding: 2rem 3rem 0
+    color: rgb(74, 160, 128)
     background: white
     height: 100%
     width: 35%
+
+    p, button
+        margin-left: 2rem
+        font-size: 1.2rem
+
+.result
+    p
+        color: rgb(67,56,113)
+        font-size: 20px
+        font-weight: bold
+    div
+        padding: .25rem
+        margin-bottom: .5rem
+        border-radius: 4px
+        background: rgb(223,237,232)
+
+        :nth-child(2)
+            margin-left: 4rem
+            color: rgb(74, 160, 128)

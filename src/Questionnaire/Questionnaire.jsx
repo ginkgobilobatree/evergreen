@@ -20,7 +20,7 @@ function Questionnaire() {
         setStep={setStep}
         step={step}
       />
-      <QuestionAnswers userData={userData} step={step} />
+      <QuestionAnswers userData={userData} step={step} setStep={setStep}/>
     </>
   );
 }

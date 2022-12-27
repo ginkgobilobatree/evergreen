@@ -37,3 +37,21 @@ export const Answers = [
   },
   { selfTest: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] },
 ];
+
+export const GeneralText = {
+  showResultButton: "Zu Meinem Ergebnis",
+  goBackButton: "Zurück",
+  hereQuestions: "Hier die Fragen",
+  hereAnswers: "Hier die Antworten",
+  hereResult: "Hier das Ergebnis",
+  myRiskRate: "Meine Risikokennzahl:",
+  yinAndYang: "Zusammensetzung aus den beiden EVERGREEN Fonds Yin & Yang:",
+  annualRevenue: "Erwarteter Jahresertrag:",
+  votality: "Votalität:",
+  yin: "(Yin)",
+  yang: "(Yang)"
+}
+
+export const Units = {
+  percent: "%"
+}
