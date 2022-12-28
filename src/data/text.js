@@ -48,10 +48,10 @@ export const GeneralText = {
   yinAndYang: "Zusammensetzung aus den beiden EVERGREEN Fonds Yin & Yang:",
   annualRevenue: "Erwarteter Jahresertrag:",
   votality: "Votalität:",
-  yin: "(Yin)",
-  yang: "(Yang)"
-}
+  yin: "Yin",
+  yang: "Yang",
+};
 
 export const Units = {
-  percent: "%"
-}
+  percent: " %",
+};

@@ -9,12 +9,45 @@
     margin-top: 7.1rem
     margin-bottom: min(5rem)
 
+button
+    background: rgb(74, 160, 128)
+    border: none
+    color: white
+    padding: .5rem .8rem
+    cursor: pointer
+    border-radius: 4px
+
+button:hover
+    background: rgb(188, 219, 208)
+
+button:active
+    background: white
+    color: black
+
 form
+    display: flex
+    flex-direction: column
+    justify-content: space-between
     padding: 2rem 3rem 0
     color: white
     background: rgb(67, 56, 113)
     height: 100%
     width: 65%
+
+    .inputContainer
+        margin-top: 5rem
+        display: flex
+        justify-content: center
+        flex-wrap: wrap
+        gap: .5rem
+
+        .radio10:hover + label
+            width: 1rem
+            padding: .5rem .75rem
+
+        label
+            width: 1rem
+            padding: .5rem .75rem
 
     .questionContainer
         height: 4rem
@@ -46,9 +79,11 @@ form
 
     input[type="radio"]:hover + label 
         background: rgb(188, 219, 208)
+        cursor: pointer
 
     input[type="radio"]:active + label
         background: white
+        color: black
 
 .answers
     padding: 2rem 3rem 0
@@ -75,3 +110,25 @@ form
         :nth-child(2)
             margin-left: 4rem
             color: rgb(74, 160, 128)
+
+    .storeData
+        appearance: none
+        font-family: Arial, Helvetica, sans-serif
+        font-size: 19.2px
+        color: white
+        border: none
+        border-radius: 4px
+        padding: .5rem .8rem
+        text-decoration: none
+        margin-left: 1rem
+        background: rgb(74, 160, 128)
+
+    .storeData:hover
+        background: rgb(188, 219, 208)
+
+    .storeData:active
+        background: white
+        color: black
+
+.ha
+    height: 100%

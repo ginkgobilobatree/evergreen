@@ -2,8 +2,10 @@ import React, { useState, useEffect } from "react";
 import "../App.sass";
 import { postUserData } from "../utils/postUserData";
 import { GeneralText, Units } from "../data/text";
+import { giveGermanText } from "../utils/giveGermanText";
+import { Link } from "react-router-dom";
 
-function QuestionAnswers({ userData, step, setStep }) {
+function QuestionAnswers({ userData, step }) {
   const [result, setResult] = useState({});
 
   useEffect(() => {
@@ -48,6 +50,7 @@ function QuestionAnswers({ userData, step, setStep }) {
         <button type="button" onClick={() => setResult({})}>
           {GeneralText.goBackButton}
         </button>
+        <Link className="storeData" to="/storedata">Resultat speichern</Link>
       </div>
     );
   }
@@ -55,13 +58,16 @@ function QuestionAnswers({ userData, step, setStep }) {
   return (
     <div className="answers">
       <h1>{GeneralText.hereAnswers}</h1>
-        <p>{userData.goal.split(",")[1]}</p>
-        <p>{userData.age.split(",")[1]}</p>
-        <p>{userData.duration.split(",")[1]}</p>
-        <p>{userData.behaviour.split(",")[1]}</p>
-        <p>{userData.selfTest}</p>
+      <p>{giveGermanText(userData, "goal")}</p>
+      <p>{giveGermanText(userData, "age")}</p>
+      <p>{giveGermanText(userData, "duration")}</p>
+      <p>{giveGermanText(userData, "behaviour")}</p>
+      <p>{userData.selfTest}</p>
       {userData.selfTest.length > 0 && (
-        <button type="button" onClick={() => postUserData(userData, setResult)}>
+        <button
+          type="button"
+          onClick={() => postUserData(userData, setResult)}
+        >
           {GeneralText.showResultButton}
         </button>
       )}

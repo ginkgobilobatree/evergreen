@@ -1,5 +1,5 @@
 export async function postUserData(userData, setResult) {
-  const url = "http://localhost:8000/getData";
+  const url = "http://localhost:8000/getRiskValues";
   const data = {
     goal: userData.goal.split(",")[0],
     age: userData.age.split(",")[0],
