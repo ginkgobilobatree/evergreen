@@ -24,7 +24,7 @@ button:active
     background: white
     color: black
 
-form
+.form
     display: flex
     flex-direction: column
     justify-content: space-between
@@ -130,5 +130,17 @@ form
         background: white
         color: black
 
-.ha
-    height: 100%
+div.form
+    justify-content: start
+
+    .login
+        display: flex
+        flex-direction: column
+        width: max-content
+
+    input[type="text"], input[type="password"]
+        padding: .5rem .75rem
+        text-align: center
+
+    button
+        margin-top: .5rem

@@ -28,7 +28,7 @@ function QuestionForm({ setUserData, step, setStep, userData }) {
 
   if (step === 4) {
     return (
-      <form>
+      <form className="form">
         <div>
           <h1>{GeneralText.hereQuestions}</h1>
           <div className="questionContainer">
@@ -50,7 +50,7 @@ function QuestionForm({ setUserData, step, setStep, userData }) {
   }
 
   return (
-    <form>
+    <form className="form">
       <div>
         <h1>{GeneralText.hereQuestions}</h1>
         <div className="questionContainer">

@@ -39,6 +39,9 @@ export const Answers = [
 ];
 
 export const GeneralText = {
+  heroTitle: "Code Challenge",
+  pleaseLogin: "Bitte einloggen, um Ihre Daten zu speichern.",
+  loginButton: "Einloggen",
   showResultButton: "Zu Meinem Ergebnis",
   goBackButton: "Zurück",
   hereQuestions: "Hier die Fragen",
