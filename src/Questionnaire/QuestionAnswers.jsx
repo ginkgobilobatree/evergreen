@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { /* useState, */ useEffect } from "react";
 import "../App.sass";
 import { postUserData } from "../utils/postUserData";
 import { GeneralText, Units } from "../data/text";
 import { giveGermanText } from "../utils/giveGermanText";
 import { Link } from "react-router-dom";
 
-function QuestionAnswers({ userData, step }) {
-  const [result, setResult] = useState({});
+function QuestionAnswers({ userData, step, result, setResult }) {
+  // const [result, setResult] = useState({});
 
   useEffect(() => {
     setResult({});
