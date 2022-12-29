@@ -3,6 +3,14 @@ import "../App.sass";
 import { GeneralText, Units } from "../data/text";
 
 function StoreUserData({result}) {
+
+
+  if(Object.keys(result).length === 0) {
+    return (
+      <h1>Hier is' nix.<br/>Bitte erst Fragen beantworten oder Server starten.</h1>
+    )
+  }
+
   return (
       <div className="result answers">
         <h1>{GeneralText.hereResult}</h1>

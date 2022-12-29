@@ -7,7 +7,7 @@ import { useState } from "react";
 
 function App() {
 
-  const [result, setResult] = useState({hello: "hello"})
+  const [result, setResult] = useState({})
 
   return (
     <BrowserRouter>
