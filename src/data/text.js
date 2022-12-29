@@ -40,10 +40,15 @@ export const Answers = [
 
 export const GeneralText = {
   heroTitle: "Code Challenge",
-  pleaseLogin: "Bitte einloggen, um Ihre Daten zu speichern.",
-  loginButton: "Einloggen",
+  nothingHere: "Hier is' nix.",
+  answerQuestionsFirst: "Bitte erst Fragen beantworten.",
   showResultButton: "Zu Meinem Ergebnis",
   goBackButton: "Zurück",
+  storeResult: "Resultat speichern?",
+  save: "Speichern",
+  or: "oder",
+  oldResult: "Bitte altes Resultat",
+  show: "Anzeigen lassen",
   hereQuestions: "Hier die Fragen",
   hereAnswers: "Hier die Antworten",
   hereResult: "Hier das Ergebnis",

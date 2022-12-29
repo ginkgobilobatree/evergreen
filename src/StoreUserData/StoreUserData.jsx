@@ -1,19 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
 import "../App.sass";
 import { GeneralText, Units } from "../data/text";
 
-function StoreUserData({result}) {
+function StoreUserData({ result }) {
+  const [uniqueURL, setUniqueURL] = useState("");
 
-
-  if(Object.keys(result).length === 0) {
+  if (Object.keys(result).length === 0) {
     return (
-      <h1>Hier is' nix.<br/>Bitte erst Fragen beantworten oder Server starten.</h1>
-    )
+      <h1>
+        {GeneralText.nothingHere}
+        <br />
+        {GeneralText.answerQuestionsFirst}
+      </h1>
+    );
   }
 
   return (
+    <>
+      <div className="form">
+        <button type="button">{GeneralText.save}</button>
+        <p>{GeneralText.or}</p>
+        <input
+          type="text"
+          id="oldResult"
+          value={uniqueURL}
+          placeholder={GeneralText.oldResult}
+          onChange={(e) => setUniqueURL(e.target.value)}
+        />
+        <button type="button">{GeneralText.show}</button>
+        <p>{uniqueURL}</p>
+      </div>
       <div className="result answers">
-        <h1>{GeneralText.hereResult}</h1>
+        <h1>{GeneralText.storeResult}</h1>
         <div>
           <p>{GeneralText.myRiskRate}</p>
           <p>
@@ -45,10 +63,8 @@ function StoreUserData({result}) {
             {Units.percent}
           </p>
         </div>
-        <button type="button">
-          {GeneralText.goBackButton}
-        </button>
       </div>
+    </>
   );
 }
 
