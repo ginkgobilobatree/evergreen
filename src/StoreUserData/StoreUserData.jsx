@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../App.sass";
 import { GeneralText, Units } from "../data/text";
+import { saveUserData } from "../utils/saveUserData";
 
 function StoreUserData({ result }) {
   const [uniqueURL, setUniqueURL] = useState("");
@@ -18,7 +19,7 @@ function StoreUserData({ result }) {
   return (
     <>
       <div className="form">
-        <button type="button">{GeneralText.save}</button>
+        <button type="button" onClick={() => saveUserData(result)} >{GeneralText.save}</button>
         <p>{GeneralText.or}</p>
         <input
           type="text"
