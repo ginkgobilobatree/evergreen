@@ -12,7 +12,7 @@ export async function saveUserData(userData) {
   const result = await response.json();
   console.log(result.timestamp)
   result.saved
-    ? alert(`Gespeichert.\nDeine URL lautet:\n${result.timestamp}`)
+    ? alert(`Gespeichert.\nDeine Speichernummer lautet:\n${result.timestamp}`)
     : alert("irgendwas lief schief, sorry.");
   return result;
 }

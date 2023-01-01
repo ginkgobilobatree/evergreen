@@ -104,6 +104,7 @@ function QuestionForm({ setUserData, step, setStep, userData }) {
         </div>
       </div>
       <button
+        style={{ background: step === 0 ? "gray" : "" }}
         className="goBack"
         type="button"
         disabled={step === 0}

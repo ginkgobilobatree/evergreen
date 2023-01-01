@@ -6,8 +6,14 @@ import { giveGermanText } from "../utils/giveGermanText";
 import { Link } from "react-router-dom";
 import { getOldResult } from "../utils/getOldResult";
 
-function QuestionAnswers({ userData, step, result, setResult, uniqueURL, setUniqueURL }) {
-
+function QuestionAnswers({
+  userData,
+  step,
+  result,
+  setResult,
+  uniqueURL,
+  setUniqueURL,
+}) {
   useEffect(() => {
     setResult({});
   }, [step, setResult]);
@@ -50,29 +56,36 @@ function QuestionAnswers({ userData, step, result, setResult, uniqueURL, setUniq
         <button type="button" onClick={() => setResult({})}>
           {GeneralText.goBackButton}
         </button>
-        <Link className="storeData" to="/storedata">Resultat speichern</Link>
+        <Link className="storeData" to="/storedata">
+          Resultat speichern
+        </Link>
       </div>
     );
   }
 
   return (
     <div className="answers">
-      <h1>{GeneralText.hereAnswers}</h1>
-      <p>{giveGermanText(userData, "goal")}</p>
-      <p>{giveGermanText(userData, "age")}</p>
-      <p>{giveGermanText(userData, "duration")}</p>
-      <p>{giveGermanText(userData, "behaviour")}</p>
-      <p>{userData.selfTest}</p>
-      {userData.selfTest.length > 0 && (
-        <button
-          type="button"
-          onClick={() => postUserData(userData, setResult)}
-        >
-          {GeneralText.showResultButton}
-        </button>
+      {step > 0 && (
+        <>
+          <h1>{GeneralText.hereAnswers}</h1>
+          <p>{giveGermanText(userData, "goal")}</p>
+          <p>{giveGermanText(userData, "age")}</p>
+          <p>{giveGermanText(userData, "duration")}</p>
+          <p>{giveGermanText(userData, "behaviour")}</p>
+          <p>{userData.selfTest}</p>
+          {userData.selfTest.length > 0 && (
+            <button
+              type="button"
+              onClick={() => postUserData(userData, setResult)}
+            >
+              {GeneralText.showResultButton}
+            </button>
+          )}
+        </>
       )}
-      {!step && <div className="showResult">
-       <input
+      {!step && (
+        <div className="showResult">
+          <input
             type="text"
             id="oldResult"
             value={uniqueURL}
@@ -87,7 +100,9 @@ function QuestionAnswers({ userData, step, result, setResult, uniqueURL, setUniq
             }}
           >
             {GeneralText.show}
-          </button></div>}
+          </button>
+        </div>
+      )}
     </div>
   );
 }
