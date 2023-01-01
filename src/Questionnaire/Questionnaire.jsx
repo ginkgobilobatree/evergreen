@@ -2,7 +2,7 @@ import QuestionAnswers from "./QuestionAnswers";
 import QuestionForm from "./QuestionForm";
 import { useState } from "react";
 
-function Questionnaire({result, setResult}) {
+function Questionnaire({ result, setResult, setUniqueURL, uniqueURL }) {
   const [step, setStep] = useState(0);
   const [userData, setUserData] = useState({
     goal: "",
@@ -20,7 +20,15 @@ function Questionnaire({result, setResult}) {
         setStep={setStep}
         step={step}
       />
-      <QuestionAnswers userData={userData} step={step} setStep={setStep} result={result} setResult={setResult} />
+      <QuestionAnswers
+        uniqueURL={uniqueURL}
+        setUniqueURL={setUniqueURL}
+        userData={userData}
+        step={step}
+        setStep={setStep}
+        result={result}
+        setResult={setResult}
+      />
     </>
   );
 }

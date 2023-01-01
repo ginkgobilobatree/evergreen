@@ -6,16 +6,36 @@ import { GeneralText } from "./data/text";
 import { useState } from "react";
 
 function App() {
-
-  const [result, setResult] = useState({})
+  const [uniqueURL, setUniqueURL] = useState("");
+  const [result, setResult] = useState({});
 
   return (
     <BrowserRouter>
       <h1 className="heroTitle">{GeneralText.heroTitle}</h1>
       <div className="App">
         <Routes>
-          <Route path="storedata" element={<StoreUserData result={result} />} />
-          <Route path="*" element={<Questionnaire result={result} setResult={setResult} />} />
+          <Route
+            path="storedata"
+            element={
+              <StoreUserData
+                uniqueURL={uniqueURL}
+                setUniqueURL={setUniqueURL}
+                result={result}
+                setResult={setResult}
+              />
+            }
+          />
+          <Route
+            path="*"
+            element={
+              <Questionnaire
+                result={result}
+                setResult={setResult}
+                uniqueURL={uniqueURL}
+                setUniqueURL={setUniqueURL}
+              />
+            }
+          />
         </Routes>
       </div>
     </BrowserRouter>

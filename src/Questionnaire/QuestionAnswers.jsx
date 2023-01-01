@@ -4,8 +4,9 @@ import { postUserData } from "../utils/postUserData";
 import { GeneralText, Units } from "../data/text";
 import { giveGermanText } from "../utils/giveGermanText";
 import { Link } from "react-router-dom";
+import { getOldResult } from "../utils/getOldResult";
 
-function QuestionAnswers({ userData, step, result, setResult }) {
+function QuestionAnswers({ userData, step, result, setResult, uniqueURL, setUniqueURL }) {
 
   useEffect(() => {
     setResult({});
@@ -70,6 +71,23 @@ function QuestionAnswers({ userData, step, result, setResult }) {
           {GeneralText.showResultButton}
         </button>
       )}
+      {!step && <div className="showResult">
+       <input
+            type="text"
+            id="oldResult"
+            value={uniqueURL}
+            placeholder={GeneralText.oldResult}
+            onChange={(e) => setUniqueURL(e.target.value)}
+          />
+          <button
+            type="button"
+            onClick={() => {
+              getOldResult(uniqueURL, setResult);
+              setUniqueURL("");
+            }}
+          >
+            {GeneralText.show}
+          </button></div>}
     </div>
   );
 }

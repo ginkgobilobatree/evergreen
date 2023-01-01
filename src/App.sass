@@ -131,16 +131,31 @@ button:active
         color: black
 
 div.form
-    justify-content: start
+    justify-content: center
+    align-items: center
 
-    .login
+    .center
         display: flex
         flex-direction: column
-        width: max-content
+        text-align: center
+        width: 20rem
 
     input[type="text"], input[type="password"]
         padding: .5rem .75rem
         text-align: center
 
     button
-        margin-top: .5rem
+        margin-top: .3rem
+.showResult
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-itmes: center
+    gap: .25rem
+
+    button
+        margin: 0
+
+    input
+        height: 2rem
+        text-align: center

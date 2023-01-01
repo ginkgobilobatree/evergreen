@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import "../App.sass";
 import { GeneralText, Units } from "../data/text";
+import { getOldResult } from "../utils/getOldResult";
 import { saveUserData } from "../utils/saveUserData";
 
-function StoreUserData({ result }) {
-  const [uniqueURL, setUniqueURL] = useState("");
+function StoreUserData({ result, setResult, uniqueURL, setUniqueURL }) {
 
   if (Object.keys(result).length === 0) {
     return (
@@ -19,17 +19,28 @@ function StoreUserData({ result }) {
   return (
     <>
       <div className="form">
-        <button type="button" onClick={() => saveUserData(result)} >{GeneralText.save}</button>
-        <p>{GeneralText.or}</p>
-        <input
-          type="text"
-          id="oldResult"
-          value={uniqueURL}
-          placeholder={GeneralText.oldResult}
-          onChange={(e) => setUniqueURL(e.target.value)}
-        />
-        <button type="button">{GeneralText.show}</button>
-        <p>{uniqueURL}</p>
+        <div className="center">
+          <button type="button" onClick={() => saveUserData(result)}>
+            {GeneralText.save}
+          </button>
+          <p>{GeneralText.or}</p>
+          <input
+            type="text"
+            id="oldResult"
+            value={uniqueURL}
+            placeholder={GeneralText.oldResult}
+            onChange={(e) => setUniqueURL(e.target.value)}
+          />
+          <button
+            type="button"
+            onClick={() => {
+              getOldResult(uniqueURL, setResult);
+              setUniqueURL("");
+            }}
+          >
+            {GeneralText.show}
+          </button>
+        </div>
       </div>
       <div className="result answers">
         <h1>{GeneralText.storeResult}</h1>
