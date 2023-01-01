@@ -1,4 +1,5 @@
 export async function postUserData(userData, setResult) {
+  //fetcht aus gepostetem body berechnete Daten
   const url = "http://localhost:8000/getRiskValues";
   const data = {
     goal: userData.goal.split(",")[0],

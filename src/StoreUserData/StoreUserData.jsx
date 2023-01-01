@@ -5,8 +5,8 @@ import { getOldResult } from "../utils/getOldResult";
 import { saveUserData } from "../utils/saveUserData";
 
 function StoreUserData({ result, setResult, uniqueURL, setUniqueURL }) {
-
   if (Object.keys(result).length === 0) {
+    //wird gerendert, falls kein Resultat vorliegt
     return (
       <h1>
         {GeneralText.nothingHere}
@@ -17,6 +17,7 @@ function StoreUserData({ result, setResult, uniqueURL, setUniqueURL }) {
   }
 
   return (
+    //entweder Resultat in DB speichern oder altes Resultat aus DB abfragen
     <>
       <div className="form">
         <div className="center">

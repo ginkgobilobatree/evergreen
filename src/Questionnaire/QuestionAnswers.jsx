@@ -15,10 +15,11 @@ function QuestionAnswers({
   setUniqueURL,
 }) {
   useEffect(() => {
+    //ermöglicht die erneute Beantwortung der Fragen, obwohl Resultat aus DB erhalten wurde
     setResult({});
   }, [step, setResult]);
-
   if (result.calculatedRiskRate) {
+    //rendert, wenn ein Resultat gefetcht wurde
     return (
       <div className="result answers">
         <h1>{GeneralText.hereResult}</h1>
@@ -57,7 +58,7 @@ function QuestionAnswers({
           {GeneralText.goBackButton}
         </button>
         <Link className="storeData" to="/storedata">
-          Resultat speichern
+          {GeneralText.pleaseStoreResult}
         </Link>
       </div>
     );
@@ -83,7 +84,7 @@ function QuestionAnswers({
           )}
         </>
       )}
-      {!step && (
+      {!step && ( // falls es schon eine mockURL/uniqURL/Speichernummer gibt, kann sie hier eingegeben werden
         <div className="showResult">
           <input
             type="text"

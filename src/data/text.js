@@ -45,6 +45,7 @@ export const GeneralText = {
   showResultButton: "Zu Meinem Ergebnis",
   goBackButton: "Zurück",
   storeResult: "Resultat speichern?",
+  pleaseStoreResult: "Resultat speichern",
   save: "Speichern",
   or: "oder",
   oldResult: "Bitte altes Resultat",

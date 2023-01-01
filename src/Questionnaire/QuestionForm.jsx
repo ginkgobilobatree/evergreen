@@ -4,10 +4,11 @@ import { Questions, Answers, GeneralText } from "../data/text";
 import { handleChange } from "../utils/handleChange";
 
 function QuestionForm({ setUserData, step, setStep, userData }) {
-  const answer = Object.keys(Answers[step]);
-  const value = Object.values(Answers[step])[0];
+  const answer = Object.keys(Answers[step]); //um den folgenden Code auszudünnen
+  const value = Object.values(Answers[step])[0]; //um den folgenden Code auszudünnen
 
   function InputRange() {
+    //es werden 10 radio buttons benötigt
     return value.map((i) => (
       <div key={i}>
         <input
@@ -27,6 +28,7 @@ function QuestionForm({ setUserData, step, setStep, userData }) {
   }
 
   if (step === 4) {
+    //die 5. Frage bietet ein anderes Antwort-Muster
     return (
       <form className="form">
         <div>
@@ -67,7 +69,7 @@ function QuestionForm({ setUserData, step, setStep, userData }) {
               type="radio"
               id="input1"
               name={answer}
-              value={[value[0][1], value[0][0]]}
+              value={[value[0][1], value[0][0]]} //value[<0 = erste Frage>][<0 = deutsch / 1 = englisch>]
             />
             <label htmlFor="input1">{value[0][0]}</label>
           </div>
@@ -103,15 +105,15 @@ function QuestionForm({ setUserData, step, setStep, userData }) {
           </div>
         </div>
       </div>
-      <button
-        style={{ background: step === 0 ? "gray" : "" }}
-        className="goBack"
-        type="button"
-        disabled={step === 0}
-        onClick={() => setStep(step - 1)}
-      >
-        {GeneralText.goBackButton}
-      </button>
+      {step > 0 && (
+        <button
+          className="goBack"
+          type="button"
+          onClick={() => setStep(step - 1)}
+        >
+          {GeneralText.goBackButton}
+        </button>
+      )}
     </form>
   );
 }
