@@ -86,6 +86,7 @@ function QuestionAnswers({
       )}
       {!step && ( // falls es schon eine mockURL/uniqURL/Speichernummer gibt, kann sie hier eingegeben werden
         <div className="showResult">
+          <p>Hast Du schon eine Speichernummer?</p>
           <input
             type="text"
             id="oldResult"
